@@ -44,7 +44,8 @@ export default function Login() {
               <Input id="password" type="password" required />
             </div>
             <Button type="submit" className="w-full">
-              Login
+              {/* TEMPORARY SOLUTION */}
+              <Link href="/dashboard">Login</Link>
             </Button>
             <Button variant="outline" className="w-full">
               Login with Google
