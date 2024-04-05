@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+// *** Navbar and other components are not imported here, but they are used in ThemeProvider function imported above
+// *** Explained here: https://stackoverflow.com/questions/74992326/does-use-client-in-next-js-13-root-layout-make-whole-routes-client-component#answer-76533664
 
 import "./globals.css";
 
@@ -14,14 +16,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider
-          defaultTheme="system"
-          attribute="class"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <div>
+          <ThemeProvider
+            defaultTheme="system"
+            attribute="class"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );

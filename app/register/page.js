@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import Navbar from "@/components/utilities/navbar";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,8 +13,6 @@ import { Label } from "@/components/ui/label";
 export default function Register() {
   return (
     <div className="h-screen">
-      <Navbar />
-
       <Card className="relative mx-auto max-w-sm top-[10%] ">
         <CardHeader>
           <CardTitle className="text-2xl">Sign Up</CardTitle>
