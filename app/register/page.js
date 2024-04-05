@@ -18,7 +18,7 @@ export default function Register() {
     <div className="h-screen">
       <Navbar />
 
-      <Card className="relative mx-auto max-w-sm top-[50vh] -translate-y-[50%]">
+      <Card className="relative mx-auto max-w-sm top-[50vh] sm:-translate-y-[50%] -translate-y-[75%]">
         <CardHeader>
           <CardTitle className="text-xl">Sign Up</CardTitle>
           <CardDescription>
