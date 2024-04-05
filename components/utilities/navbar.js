@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, DollarSign } from "lucide-react";
 import { Icons } from "@/components/icons";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -33,12 +33,12 @@ import {
 const infolinks = [
   {
     title: "First Time Homebuyers",
-    href: "/first-time-homebuyers",
+    href: "/fthb",
     description: "Our step-by-step guide for first time homebuyers",
   },
   {
     title: "Home Marketing Guide",
-    href: "/home-marketing-guide",
+    href: "/sell",
     description: "Learn what makes our marketing strategy unique and effective",
   },
   {
@@ -49,24 +49,34 @@ const infolinks = [
   },
   {
     title: "Mortgage Calculator",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    href: "/mortgage-calculator",
+    description: "Calculate your monthly mortgage payment with our tool",
+  },
+  {
+    title: "Careers",
+    href: "/careers",
+    description: "Join our team and start a rewarding career in real estate",
+  },
+  {
+    title: "Our Team",
+    href: "/team",
+    description: "Meet the Kngdm/RE team and learn about our agents",
   },
 ];
 const services = [
   {
     title: "Buy",
     href: "/listings",
-    description: "Browse Coastal Bend Listings and find your dream home",
+    description: "Browse Local Listings and find your dream home",
   },
   {
     title: "Sell",
     href: "/sell",
-    description: "List your home with Gomez Properties and get top dollar",
+    description: "List your home with Kngdm/RE and get top dollar",
   },
   {
     title: "Rent",
-    href: "/rentals",
+    href: "/rent",
     description: "Find Your Next Rental and start an application online",
   },
 ];
@@ -112,15 +122,15 @@ export function NavMenu() {
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
+                    href="/sell"
                   >
-                    <Icons.logo className="h-6 w-6" />
+                    <DollarSign className="h-6 w-6 -rotate-6 opacity-60 text-green-500" />
+                    <DollarSign className="absolute left-16 rotate-12 top-28 opacity-40 h-6 w-6 text-green-500" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      What is Your Home Worth?
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components built with Radix UI and
-                      Tailwind CSS.
+                      Find out how much your home is worth in today's market
                     </p>
                   </a>
                 </NavigationMenuLink>
@@ -131,7 +141,7 @@ export function NavMenu() {
                   title={service.title}
                   href={service.href}
                 >
-                  {service.description}
+                  <div className="">{service.description}</div>
                 </ListItem>
               ))}
             </ul>
@@ -239,7 +249,7 @@ export default function Navbar() {
           <div className="hidden sm:flex">
             <ModeToggle />
           </div>
-          <Button variant="outline">
+          <Button size="sm" variant="outline">
             <Link href="/login">Login</Link>
           </Button>
         </div>
