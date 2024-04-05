@@ -17,7 +17,7 @@ export default function Login() {
   return (
     <div className="h-screen">
       <Navbar />
-      <Card className="relative mx-auto max-w-sm top-[50vh] sm:-translate-y-[50%] -translate-y-[75%]">
+      <Card className="relative mx-auto max-w-sm top-[10%] ">
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
           <CardDescription>
