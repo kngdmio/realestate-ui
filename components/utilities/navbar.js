@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Moon, Sun } from "lucide-react";
@@ -8,6 +10,7 @@ import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
 
+// shadcn-ui Imports
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -228,6 +231,9 @@ export default function Navbar() {
           <span className="hidden sm:flex ">
             <NavigationMenu />
           </span>
+          <div className="hidden sm:flex">
+            <NavMenu />
+          </div>
         </div>
         <div className="flex items-center space-x-3">
           <div className="hidden sm:flex">
