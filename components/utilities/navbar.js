@@ -25,6 +25,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
+// Dropdown Links Data
+
 const infolinks = [
   {
     title: "First Time Homebuyers",
@@ -71,6 +73,7 @@ const services = [
 export function ModeToggle() {
   const { setTheme } = useTheme();
   return (
+    // Dark Mode Dropdown
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
@@ -93,7 +96,7 @@ export function ModeToggle() {
     </DropdownMenu>
   );
 }
-export function NavigationMenuDemo() {
+export function NavMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -211,9 +214,8 @@ const ListItem = React.forwardRef((props, ref) => {
 ListItem.displayName = "ListItem";
 
 export default function Navbar() {
-  const { setTheme } = useTheme();
   return (
-    <nav className="sticky top-0 border-b backdrop-blur-sm bg-white/80 dark:bg-black/70 ">
+    <nav className="sticky z-10 top-0 border-b backdrop-blur-sm bg-white/80 dark:bg-black/70 ">
       <div className="flex py-3 px-4 items-center justify-between w-full ">
         <div>
           <a href="/" className="flex items-center space-x-2">
@@ -224,7 +226,7 @@ export default function Navbar() {
 
         <div className="flex items-center space-x-3 ">
           <span className="hidden sm:flex ">
-            <NavigationMenuDemo />
+            <NavigationMenu />
           </span>
         </div>
         <div className="flex items-center space-x-3">

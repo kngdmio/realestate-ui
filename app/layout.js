@@ -6,8 +6,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "kngdm.io",
-  description: "kngdm.io template",
+  title: "kngdm.io/re",
+  description: "kngdm.io/re template site",
 };
 
 export default function RootLayout({ children }) {
@@ -15,8 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider
-          attribute="class"
           defaultTheme="system"
+          attribute="class"
           enableSystem
           disableTransitionOnChange
         >
@@ -26,3 +26,6 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+// Can also add class='dark' to the html tag to enable system theme detection Docs --> (https://v2.tailwindcss.com/docs/dark-mode)
+//  Like this: <html lang="en" class="dark">
