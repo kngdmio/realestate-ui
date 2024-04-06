@@ -10,12 +10,14 @@ import {
   X,
   Linkedin,
   Facebook,
+  Menu,
 } from "lucide-react";
 import { Icons } from "@/components/icons";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import SearchBundle from "./SearchBundle";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 
 import { cn } from "@/lib/utils";
 
@@ -268,6 +270,7 @@ export default function Navbar() {
             <Icons.logo className="h-6 w-6" />
             <span className="text-lg font-medium">kngdm/re</span>
           </a>
+
           <div className="ml-8">
             <span className="hidden sm:flex ">
               <NavigationMenu />
@@ -281,7 +284,7 @@ export default function Navbar() {
         {/* Nav Right */}
 
         <div className="flex flex-shrink-0 items-center space-x-2.5">
-          <div className=" sm:flex w-full flex-1">
+          <div className=" hidden sm:flex w-full flex-1">
             <form>
               <div className="relative">
                 <Search className="absolute left-2.5 top-[12px] h-4 w-4 text-muted-foreground" />
@@ -316,6 +319,8 @@ export default function Navbar() {
             </Button>
 
             <ModeToggle />
+
+            <Menu className="sm:hidden cursor-pointer" />
           </div>
         </div>
       </div>

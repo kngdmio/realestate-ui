@@ -1,6 +1,5 @@
 "use client"
-import Navbar from "@/components/utilities/navbar";
- 
+import Navbar from "./utilities/navbar"; 
 import * as React from "react"
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 
