@@ -2,11 +2,20 @@
 
 import React from "react";
 import Link from "next/link";
-import { Moon, Sun, DollarSign } from "lucide-react";
+import {
+  Moon,
+  Sun,
+  DollarSign,
+  Search,
+  X,
+  Linkedin,
+  Facebook,
+} from "lucide-react";
 import { Icons } from "@/components/icons";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-// import { ModeToggle } from "@/components/utilities/mode-toggle";
+import SearchBundle from "./SearchBundle";
+import { Input } from "@/components/ui/input";
 
 import { cn } from "@/lib/utils";
 
@@ -52,16 +61,16 @@ const infolinks = [
     href: "/mortgage-calculator",
     description: "Calculate your monthly mortgage payment with our tool",
   },
-  {
-    title: "Careers",
-    href: "/careers",
-    description: "Join our team and start a rewarding career in real estate",
-  },
-  {
-    title: "Our Team",
-    href: "/team",
-    description: "Meet the Kngdm/RE team and learn about our agents",
-  },
+  // {
+  //   title: "Careers",
+  //   href: "/careers",
+  //   description: "Join our team and start a rewarding career in real estate",
+  // },
+  // {
+  //   title: "Our Team",
+  //   href: "/team",
+  //   description: "Meet the Kngdm/RE team and learn about our agents",
+  // },
 ];
 const services = [
   {
@@ -89,7 +98,7 @@ export function ModeToggle() {
     // Dark Mode Dropdown
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button className="hidden sm:flex" variant="ghost" size="icon">
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>
@@ -115,9 +124,11 @@ export function NavMenu() {
       <NavigationMenuList>
         {/* Getting Started */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-sm">
+            Services
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
@@ -148,13 +159,16 @@ export function NavMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-        {/* Info and Tools */}
+        {/* Info */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Info / Tools</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-sm">
+            Info
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]  ">
+            <ul className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {infolinks.map((infolink) => (
                 <ListItem
+                  className="text-sm"
                   key={infolink.title}
                   title={infolink.title}
                   href={infolink.href}
@@ -170,7 +184,25 @@ export function NavMenu() {
         <NavigationMenuItem>
           <Link href="/blog" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Blog
+              <span className="text-sm">Blog</span>
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+
+        {/* Contact */}
+        <NavigationMenuItem>
+          <Link href="/team" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <span className="text-sm">Our Team</span>
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+
+        {/* Careers */}
+        <NavigationMenuItem>
+          <Link href="/careers" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <span className="text-sm">Careers</span>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -179,7 +211,7 @@ export function NavMenu() {
         <NavigationMenuItem>
           <Link href="/contact" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact
+              <span className="text-sm">Contact</span>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -202,7 +234,7 @@ const ListItem = React.forwardRef((props, ref) => {
         {
           ref: ref,
           className: cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 duration-200 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/50 text-accent-foreground/80 hover:text-accent-foreground/80 focus:bg-accent/60 focus:text-accent-foreground/60",
             className,
           ),
           ...rest,
@@ -216,7 +248,7 @@ const ListItem = React.forwardRef((props, ref) => {
           "p",
           {
             className:
-              "line-clamp-2 text-sm leading-snug text-muted-foreground",
+              "line-clamp-2 text-sm leading-snug text-muted-foreground/70 ",
           },
           children,
         ),
@@ -229,29 +261,62 @@ ListItem.displayName = "ListItem";
 export default function Navbar() {
   return (
     <nav className="sticky z-10 top-0 border-b backdrop-blur-sm bg-white/80 dark:bg-black/70 ">
-      <div className="flex py-3 px-4 items-center justify-between w-full ">
-        <div>
-          <a href="/" className="flex items-center space-x-2">
+      <div className=" max-w-screen-2xl m-auto flex py-3 px-4 items-center justify-between w-full ">
+        {/* Nav Left */}
+        <div className="flex items-center">
+          <a href="/" className="flex flex-shrink items-center space-x-2">
             <Icons.logo className="h-6 w-6" />
             <span className="text-lg font-medium">kngdm/re</span>
           </a>
+          <div className="ml-8">
+            <span className="hidden sm:flex ">
+              <NavigationMenu />
+            </span>
+            <div className="hidden sm:flex">
+              <NavMenu />
+            </div>
+          </div>
         </div>
 
-        <div className="flex items-center space-x-3 ">
-          <span className="hidden sm:flex ">
-            <NavigationMenu />
-          </span>
-          <div className="hidden sm:flex">
-            <NavMenu />
+        {/* Nav Right */}
+
+        <div className="flex flex-shrink-0 items-center space-x-2.5">
+          <div className=" sm:flex w-full flex-1">
+            <form>
+              <div className="relative">
+                <Search className="absolute left-2.5 top-[12px] h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder="Browse by address..."
+                  className="w-full appearance-none bg-background pl-10 shadow-none text-sm h-9"
+                />
+              </div>
+            </form>
           </div>
-        </div>
-        <div className="flex items-center space-x-3">
-          <div className="hidden sm:flex">
-            <ModeToggle />
-          </div>
-          <Button size="sm" variant="outline">
+
+          <Button size="sm" variant="outline" className="text-sm ">
             <Link href="/login">Login</Link>
           </Button>
+
+          <div className="flex items-center" items-center>
+            <Button
+              size="sm"
+              variant="ghost"
+              className="hidden sm:flex cursor-pointer mx-0 "
+            >
+              <Linkedin size="16" />
+            </Button>
+
+            <Button
+              size="sm"
+              variant="ghost"
+              className="hidden sm:flex cursor-pointer mx-0"
+            >
+              <Facebook size="16" />
+            </Button>
+
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </nav>
