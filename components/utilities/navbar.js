@@ -126,7 +126,7 @@ export function NavMenu() {
       <NavigationMenuList>
         {/* Getting Started */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-sm">
+          <NavigationMenuTrigger className="text-sm font-semibold">
             Services
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -163,7 +163,7 @@ export function NavMenu() {
 
         {/* Info */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-sm">
+          <NavigationMenuTrigger className="text-sm font-medium">
             Info
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -186,7 +186,7 @@ export function NavMenu() {
         <NavigationMenuItem>
           <Link href="/blog" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <span className="text-sm">Blog</span>
+              <span className="text-sm font-semibold">Blog</span>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -195,7 +195,7 @@ export function NavMenu() {
         <NavigationMenuItem>
           <Link href="/team" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <span className="text-sm">Our Team</span>
+              <span className="text-sm font-semibold">Our Team</span>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -204,7 +204,7 @@ export function NavMenu() {
         <NavigationMenuItem>
           <Link href="/careers" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <span className="text-sm">Careers</span>
+              <span className="text-sm font-semibold">Careers</span>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -213,7 +213,7 @@ export function NavMenu() {
         <NavigationMenuItem>
           <Link href="/contact" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <span className="text-sm">Contact</span>
+              <span className="text-sm font-semibold">Contact</span>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -262,7 +262,7 @@ ListItem.displayName = "ListItem";
 
 export default function Navbar() {
   return (
-    <nav className="sticky z-10 top-0 border-b backdrop-blur-sm bg-white/80 dark:bg-black/70 ">
+    <nav className=" w-full z-10 top-0 border-b backdrop-blur-sm bg-white/80 dark:bg-black/70 ">
       <div className=" max-w-screen-2xl m-auto flex py-3 px-4 items-center justify-between w-full ">
         {/* Nav Left */}
         <div className="flex items-center">
@@ -284,25 +284,23 @@ export default function Navbar() {
         {/* Nav Right */}
 
         <div className="flex flex-shrink-0 items-center space-x-2.5">
-          <div className=" hidden sm:flex w-full flex-1">
+          {/* navbar input */}
+          {/* <div className=" hidden sm:flex w-full flex-1">
             <form>
               <div className="relative">
-                <Search className="absolute left-2.5 top-[12px] h-4 w-4 text-muted-foreground" />
+                <Search className="absolute left-2.5 top-[12px] h-4 w-4 text-foreground" />
                 <Input
                   type="search"
                   placeholder="Browse by address..."
-                  className="w-full appearance-none bg-background pl-10 shadow-none text-sm h-9"
+                  className="w-full appearance-none bg-muted-background pl-10 shadow-none text-foreground text-sm h-9"
                 />
               </div>
             </form>
-          </div>
-
-          <Button size="sm" variant="outline" className="text-sm ">
-            <Link href="/login">Login</Link>
-          </Button>
+          </div> */}
 
           <div className="flex items-center" items-center>
-            <Button
+            <ModeToggle />
+            {/* <Button
               size="sm"
               variant="ghost"
               className="hidden sm:flex cursor-pointer mx-0 "
@@ -316,12 +314,13 @@ export default function Navbar() {
               className="hidden sm:flex cursor-pointer mx-0"
             >
               <Facebook size="16" />
-            </Button>
-
-            <ModeToggle />
+            </Button> */}
 
             <Menu className="sm:hidden cursor-pointer" />
           </div>
+          <Button size="sm" variant="outline" className="text-sm ">
+            <Link href="/login">Login</Link>
+          </Button>
         </div>
       </div>
     </nav>

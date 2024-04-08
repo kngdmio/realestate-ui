@@ -15,67 +15,49 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export const works = [
-  {
-    artist: "Ornella Binni",
-    art: "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Tom Byrom",
-    art: "https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Vladimir Malyavko",
-    art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Ornella Binni",
-    art: "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Tom Byrom",
-    art: "https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Vladimir Malyavko",
-    art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Ornella Binni",
-    art: "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Tom Byrom",
-    art: "https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80",
-  },
-  {
-    artist: "Vladimir Malyavko",
-    art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80",
-  },
-];
-
 export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="px-4 h-[50vh] w-screen bg-secondary mx-auto">
-        <div className=" sm:max-w-screen-xl sm:mx-auto h-full content-center text-left ">
-          <h2 className="font-bold text-4xl leading-snug ">Find a Home.</h2>
-          <h2 className="font-bold text-4xl leading-snug ">
-            Close Confidently.
+      <section className=" h-[50vh] sm:h-[30rem] w-screen  mx-auto">
+        <img
+          className="absolute h-[50vh] sm:h-[30rem]  object-cover object-center w-full -z-10"
+          src={`https://images.unsplash.com/photo-1634827022377-33f832dadcd8?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+          width={500}
+          height={500}
+          alt="Picture of the author"
+        />{" "}
+        <div className="px-4 sm:px-10  mx-auto   max-w-screen-xl  h-full content-center text-center ">
+          <h2 className="font-bold text-5xl leading-snug text-white text-shadow shadow-black">
+            Find Home{" "}
           </h2>
-          <p className="my-2">Let our experts lead the way. </p>
+
+          {/* <p className="my-2 text-white text-shadow shadow-black">
+            Let our experts lead the way.{" "}
+          </p> */}
 
           <div className=" sm:flex w-full">
-            <form className=" w-full my-4">
-              <div className="relative">
+            <form className=" w-full my-4 ">
+              {/* Center Aligned Search
+               */}
+              <div className="relative ">
+                <Search className="absolute left-[3%] sm:left-[31%] top-[14px] h-5 w-5  text-black/40" />
+                <Input
+                  type="search"
+                  placeholder="City, Neighborhood, Address, Zip, or MLS#"
+                  className="sm:w-[40%] m-auto appearance-none bg-white pl-10 shadow-none text-sm h-12"
+                />
+              </div>
+
+              {/* Left Aligned Search */}
+              {/* <div className="relative">
                 <Search className="absolute left-2.5 top-[12px] h-5 w-5  text-muted-foreground" />
                 <Input
                   type="search"
                   placeholder="City, Neighborhood, Address, Zip, or MLS#"
                   className="sm:w-[40%] appearance-none bg-background pl-10 shadow-none text-sm h-12"
                 />
-              </div>
+              </div> */}
             </form>
           </div>
         </div>
@@ -92,14 +74,15 @@ export default function Home() {
           className="w-full "
           opts={{
             align: "start",
-            loop: true,
+            // If you want to loop the carousel, uncomment below
+            // loop: true,
           }}
         >
           <CarouselContent className="-ml-1">
-            {Array.from({ length: 10 }).map((_, index) => (
+            {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem
                 key={index}
-                className="pl-1 basis-3/4 md:basis-1/2 lg:basis-1/4"
+                className="pl-1 basis-11/12 md:basis-1/4"
               >
                 <div className="p-1">
                   <Card>
@@ -112,6 +95,17 @@ export default function Home() {
                 </div>
               </CarouselItem>
             ))}
+            <CarouselItem className="pl-1 basis-11/12 md:basis-1/4">
+              <div className="p-1">
+                <Card>
+                  <CardContent className="flex aspect-square items-center justify-center p-6">
+                    <span className="text-2xl font-semibold">
+                      Browse All Listings
+                    </span>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
