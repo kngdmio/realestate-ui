@@ -3,7 +3,12 @@ import * as React from "react";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
-import { Search, CheckCircleIcon, Quote } from "lucide-react";
+import {
+  Search,
+  CheckCircleIcon,
+  Quote,
+  MessageCircleHeart,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
@@ -208,13 +213,14 @@ export default function Home() {
               <div className=" ">
                 <Card className="py-10 border-none">
                   <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                    <div className="mx-auto gap-4 sm:gap-0 grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                       <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
                         <Quote
-                          size={96}
-                          className="sm:absolute left-2 -mt-4 opacity-5"
+                          size={60}
+                          strokeWidth={1}
+                          className="sm:absolute left-2 -mt-4 opacity-20"
                         />
-                        <figure className="mt-20  flex flex-auto flex-col justify-between">
+                        <figure className="mt-4 sm:mt-20  flex flex-auto flex-col justify-between">
                           <blockquote className="text-lg leading-8 text-gray-900">
                             <p>
                               “Amet amet eget scelerisque tellus sit neque
@@ -242,17 +248,18 @@ export default function Home() {
                           </figcaption>
                         </figure>
                       </div>
-                      <div className="flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20">
+                      <div className="flex flex-col border-t border-gray-900/10 pt-16 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20">
                         {/* <img
                           className="h-12 self-start"
                           src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg"
                           alt=""
                         /> */}
                         <Quote
-                          size={96}
-                          className="sm:absolute left-[54%] -mt-4 opacity-5"
+                          size={60}
+                          strokeWidth={1}
+                          className="sm:absolute left-[54%] -mt-4 opacity-20"
                         />
-                        <figure className="mt-6 sm:mt-20 flex flex-auto flex-col justify-between">
+                        <figure className="mt-4 sm:mt-20 flex flex-auto flex-col justify-between">
                           <blockquote className="text-lg leading-8 text-gray-900">
                             <p>
                               “Excepteur veniam labore ullamco eiusmod. Pariatur
@@ -370,10 +377,10 @@ export default function Home() {
                   <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                       <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
-                        <img
-                          className="h-12 self-start"
-                          src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg"
-                          alt=""
+                        <MessageCircleHeart
+                          size={60}
+                          strokeWidth={1}
+                          className="sm:absolute left-[54%] -mt-4 opacity-20"
                         />
                         <figure className="mt-6 sm:mt-10 flex flex-auto flex-col justify-between">
                           <blockquote className="text-lg leading-8 text-gray-900">
@@ -404,10 +411,10 @@ export default function Home() {
                         </figure>
                       </div>
                       <div className="flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20">
-                        <img
-                          className="h-12 self-start"
-                          src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg"
-                          alt=""
+                        <MessageCircleHeart
+                          size={60}
+                          strokeWidth={1}
+                          className="sm:absolute left-[54%] -mt-4 opacity-20"
                         />
                         <figure className="mt-6 sm:mt-10 flex flex-auto flex-col justify-between">
                           <blockquote className="text-lg leading-8 text-gray-900">
