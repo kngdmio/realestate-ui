@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className=" h-[50vh] sm:h-[30rem] w-screen  mx-auto">
+      <section className=" h-[50vh] sm:h-[30rem] bg-foreground/50 w-screen  mx-auto">
         <img
           className="absolute h-[50vh] sm:h-[30rem]  object-cover object-center w-full -z-10"
           src={`https://images.unsplash.com/photo-1634827022377-33f832dadcd8?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
@@ -28,13 +28,15 @@ export default function Home() {
           alt="Picture of the author"
         />{" "}
         <div className="px-4 sm:px-10  mx-auto   max-w-screen-xl  h-full content-center text-center ">
-          <h2 className="font-bold text-5xl leading-snug text-white text-shadow shadow-black">
-            Find Home{" "}
+          <h2 className="font-bold text-2xl sm:text-5xl tracking-tight leading-snug text-white text-shadow shadow-black">
+            Find A Home, Make An Offer. <br />
+            Close With Confidence.
           </h2>
 
-          {/* <p className="my-2 text-white text-shadow shadow-black">
-            Let our experts lead the way.{" "}
-          </p> */}
+          <p className="my-2 text-base sm:w-[36rem] m-auto text-white text-shadow shadow-black">
+            A full-service brokerage serving the local area and surrounding
+            areas for the last 3 decades. Buy, Sell, and Rent with confidence.
+          </p>
 
           <div className=" sm:flex w-full">
             <form className=" w-full my-4 ">

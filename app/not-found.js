@@ -11,12 +11,9 @@ export default function NotFound() {
         Sorry, we could not find the page you’re looking for.
       </p>
       <div className="mt-10">
-        <Link
-          href="/"
-          className="text-sm font-semibold leading-7 text-slate-600"
-        >
+        <a href="/" className="text-sm font-semibold leading-7 text-slate-600">
           <span aria-hidden="true">&larr;</span> Back to home
-        </Link>
+        </a>
       </div>
     </section>
   );
